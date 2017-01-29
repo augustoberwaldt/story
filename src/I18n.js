@@ -12,10 +12,10 @@ class I18n
           },
           formLogin : {
             name : "Full name",
-            user : "Nome de usuário",
+            user : "User name",
             password : "Password",
             email : "Phone or email",
-            sign  : "sign in"
+            signup  : "sign in"
           }
         },
         pt : {
@@ -23,11 +23,11 @@ class I18n
             choice:"Come scegliere luovo"
          },
          formLogin : {
-           name  : "Nome completo",
-           user  : "User name",
+           name     : "Nome completo",
+           user     : "Nome de usuário",
            password : "Senha",
-           email : "Número do celular ou email",
-           sign  : "Entrar"
+           email    : "Número do celular ou email",
+           signup     : "Cadastre-se"
          }
        }
     });

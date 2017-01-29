@@ -30,7 +30,7 @@ class FormLogin extends React.Component
     			  <input placeholder = {trans.getTranslater('formLogin', 'password')} type="text" />
     			</div>
     			<div>
-    				<Button waves='light'> {trans.getTranslater('formLogin', 'sign')} </Button>
+    				<Button waves='light'> {trans.getTranslater('formLogin', 'signup')} </Button>
     		  </div>
   		  </form>
   		</div>
