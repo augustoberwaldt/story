@@ -15,7 +15,8 @@ class I18n
             user : "User name",
             password : "Password",
             email : "Phone or email",
-            signup  : "sign in"
+            signup  : "sign in",
+			signupFacebook :"Log in with Facebook"
           }
         },
         pt : {
@@ -27,7 +28,8 @@ class I18n
            user     : "Nome de usuário",
            password : "Senha",
            email    : "Número do celular ou email",
-           signup     : "Cadastre-se"
+           signup     : "Cadastre-se",
+		   signupFacebook :"      Entrar com o Facebook"
          }
        }
     });
@@ -35,7 +37,7 @@ class I18n
 
 getTranslater(name, name2) {
     return  this.lang[name][name2];
- }
+}
 
 }
 export default I18n;

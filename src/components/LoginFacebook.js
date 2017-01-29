@@ -18,13 +18,16 @@ class LoginFacebook extends React.Component
 
   render()
   {
+	const trans = new I18n();  
     return (
       <FacebookLogin
         appId="1088597931155576"
         autoLoad={true}
         fields="name,email,picture"
         callback={this.responseFacebook}
-		cssClass="face-lo"
+		cssClass="btn waves-effect waves-light blue"
+		icon="fa-facebook"
+		textButton = {trans.getTranslater('formLogin', 'signupFacebook')}
       />
     );
   }

@@ -14,14 +14,7 @@ const rootElement = global.document.getElementById('root');
 ReactDOM.render(
   <div className="container">
     <Row>
-	<LoginFacebook
-    appId="1088597931155576"
-    autoLoad={true}
-    fields="name,email,picture"
-  
-    cssClass="my-facebook-button-class"
-      icon="fa-facebook" 
-    />
+	<LoginFacebook/>
       <div className="col s6">
           <img height="10%"  src = "/pictures/banner.jpg" />
        </div>
