@@ -1,47 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from 'react-bootstrap/lib/Button';
-class FormLogin extends React.Component 
+import {Button, Icon} from 'react-materialize';
+import I18n from '../I18n';
+
+class FormLogin extends React.Component
 {
-  constructor(props) {	
-    super(props);
-    console.log(this.refs); 
-  }
+  constructor(props)
+   {
+     super(props);
 
+   }
 
-  handleSubmit(event) {  
-    
-	alert('cascacas');
-  }
-
-  
-  render() {
+  render()
+   {
+    const trans = new I18n();
     return (
-	    <div>
-		  <form className ='form'>
-		    <div>
-			  <label> Name:</label>
-			  <input type="text"  />
-			</div>
-		    
-			<div>
-			  <label> Name:</label>
-			  <input type="text"  />
-			</div>
-			
-			<div>
-			  <label> Name:</label>
-			  <input type="text"   />
-			</div>
-			
-			<div>
-				<Button  > Entrar</Button>
-		    </div> 
-		  </form>
-		</div>  
-	);
+  	  <div className="col s6">
+  		  <form className ='form'>
+    		  <div>
+    			  <input placeholder = {trans.getTranslater('formLogin', 'email')} type="text" />
+    			</div>
+    			<div>
+    			  <input placeholder = {trans.getTranslater('formLogin', 'name')}  type="text" />
+    			</div>
+    			<div>
+    			  <input placeholder = {trans.getTranslater('formLogin', 'user')}  type="text" />
+    			</div>
+          <div>
+    			  <input placeholder = {trans.getTranslater('formLogin', 'password')} type="text" />
+    			</div>
+    			<div>
+    				<Button waves='light'> {trans.getTranslater('formLogin', 'sign')} </Button>
+    		  </div>
+  		  </form>
+  		</div>
+ 	  );
   }
-  
+
 }
 
 export default FormLogin;
