@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Button, Icon} from 'react-materialize';
-import I18n from '../I18n';
+import I18n from '../i18n';
 import FacebookLogin  from 'react-facebook-login';
 
 class LoginFacebook extends React.Component
@@ -18,7 +18,7 @@ class LoginFacebook extends React.Component
 
   render()
   {
-	const trans = new I18n();
+	
     return (
       <FacebookLogin
         appId="1088597931155576"
@@ -27,7 +27,7 @@ class LoginFacebook extends React.Component
         callback={this.responseFacebook}
 		    cssClass="btn waves-effect waves-light blue"
 		    icon="fa-facebook"
-		    textButton = {trans.getTranslater('formLogin', 'signupFacebook')}
+		    textButton = {I18n.lang.formLogin.signupFacebook}
       />
     );
   }

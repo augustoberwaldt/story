@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Button, Icon} from 'react-materialize';
-import I18n from '../I18n';
+import I18n from '../i18n';
 
 class FormLogin extends React.Component
 {
@@ -12,7 +12,7 @@ class FormLogin extends React.Component
 		 email: "",
 		 name: "",
 		 user: "",
-		 password: "",
+		 password: "",  
 	 };
 	 this.handleChange = this.handleChange.bind(this);
      this.handleSubmit = this.handleSubmit.bind(this);  
@@ -70,7 +70,7 @@ class FormLogin extends React.Component
 
   render()
    {
-    const trans = new I18n();
+    
     return (
   	  <div className="col s6">
 	      <fieldset> 
@@ -78,7 +78,7 @@ class FormLogin extends React.Component
 				  <div>
 					  <input 
 					   name="email"
-					   placeholder={trans.getTranslater('formLogin', 'email')}
+					   placeholder={I18n.lang.formLogin.email}
 					   value={this.state.email}
 					   onChange={this.handleChange}
 					   type="text"
@@ -87,7 +87,7 @@ class FormLogin extends React.Component
 					<div>
 					  <input 
 					   name="name"
-					   placeholder={trans.getTranslater('formLogin', 'name')}
+					   placeholder={I18n.lang.formLogin.name}
 					   onChange={this.handleChange}
                        value={this.state.name}					   
 					   type="text" 
@@ -96,7 +96,7 @@ class FormLogin extends React.Component
 					<div>
 					  <input 
 					   name="user"  
-					   placeholder={trans.getTranslater('formLogin', 'user')}
+					   placeholder={I18n.lang.formLogin.user}
                        value={this.state.user}					   
 					   onChange={this.handleChange}
 					   type="text" 
@@ -105,7 +105,7 @@ class FormLogin extends React.Component
 					<div>
 					  <input 
 					   name="password" 
-					   placeholder={trans.getTranslater('formLogin', 'password')}
+					   placeholder={I18n.lang.formLogin.password}
 					   value={this.state.password}
 					   onChange={this.handleChange}
 					   type="password" 
@@ -114,7 +114,7 @@ class FormLogin extends React.Component
 					<div>
 					  <span>
 					    <Button  className='blue' waves='light' >
-							{trans.getTranslater('formLogin', 'signup')} 
+							{I18n.lang.formLogin.signup} 
 					    </Button>
 					  </span>
 				  </div>
