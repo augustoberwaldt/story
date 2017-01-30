@@ -5,22 +5,34 @@ import './index.css';
 import FormLogin from './components/formLogin';
 import {Button, Icon , Row} from 'react-materialize';
 import LoginFacebook from  './components/LoginFacebook'
-
+import { Router, Route, Link, browserHistory } from 'react-router'
 
 const rootElement = global.document.getElementById('root');
 
-
-
-ReactDOM.render(
-  <div className="container">
+function De() {
+ return (<div className="container">
     <Row>
-	<LoginFacebook/>
+    	<LoginFacebook/>
       <div className="col s6">
-          <img height="10%"  src = "/pictures/banner.jpg" />
        </div>
       <FormLogin></FormLogin>
     </Row>
-  </div>
+  </div>);
+}
+
+function Po() {
+ return (
+   <div className="container">
+     <h1>sascascascas </h1>
+  </div>);
+}
+
+
+ReactDOM.render(
+  <Router history={browserHistory}>
+   <Route path="/" component={De} />
+   <Route path="/test" component={Po} />
+ </Router>
   ,
  rootElement
 );
