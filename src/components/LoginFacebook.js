@@ -1,16 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Button, Icon} from 'react-materialize';
-import I18n from '../i18n';
 import FacebookLogin  from 'react-facebook-login';
+import I18n from '../i18n';
+
 
 class LoginFacebook extends React.Component
 {
-  constructor(props)
-  {
-     super(props);
-
-  }
+  
 
   responseFacebook = (response) => {
     console.log(response);
@@ -18,16 +14,15 @@ class LoginFacebook extends React.Component
 
   render()
   {
-	
     return (
       <FacebookLogin
         appId="1088597931155576"
         autoLoad={true}
         fields="name,email,picture"
         callback={this.responseFacebook}
-		    cssClass="btn waves-effect waves-light blue"
-		    icon="fa-facebook"
-		    textButton = {I18n.lang.formLogin.signupFacebook}
+		cssClass="btn waves-effect waves-light blue"
+		icon="fa-facebook"
+		textButton={I18n.lang.formLogin.signupFacebook}
       />
     );
   }

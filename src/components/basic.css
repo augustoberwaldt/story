@@ -1,0 +1,58 @@
+body, ul, table, form{
+	margin:0;
+	padding:0;
+	overflow:hidden;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+.noie .sj-book-transform div[page="1"] > div,
+.noie .sj-book-transform div[page="2"] > div{
+	overflow:visible !important;
+}
+.sj-book .shadow{
+	-webkit-transition: -webkit-box-shadow 0.5s;
+	-moz-transition: -moz-box-shadow 0.5s;
+	-o-transition: -webkit-box-shadow 0.5s;
+	-ms-transition: -ms-box-shadow 0.5s;
+
+	-webkit-box-shadow:0 0 10px #999;
+	-moz-box-shadow:0 0 10px #999;
+	-ms-box-shadow:0 0 10px #999;
+	-o-box-shadow:0 0 10px #999;
+	box-shadow:0 0 10px #999;
+}
+.sj-book .hard {
+    width: 480px;
+    height: 600px;
+    background-color: white;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none;
+}
+.show-bar .sj-book .shadow {
+    -webkit-transition: -webkit-box-shadow 0.5s;
+    -moz-transition: -moz-box-shadow 0.5s;
+    -o-transition: -webkit-box-shadow 0.5s;
+    -ms-transition: -ms-box-shadow 0.5s;
+    -webkit-box-shadow: 0 0 10px #999;
+    -moz-box-shadow: 0 0 10px #999;
+    -ms-box-shadow: 0 0 10px #999;
+    -o-box-shadow: 0 0 10px #999;
+    box-shadow: 0 0 10px #999;
+}
+#capa{
+    margin: 0;
+	background: url("http://previews.123rf.com/images/benidict83/benidict831307/benidict83130700002/20986240-vintage-coffee-background-Stock-Vector.jpg");
+    background-size: 850px 880px;
+	background-repeat: no-repeat;
+}
+#content {
+	
+   	 margin: auto;
+	
+	
+}
