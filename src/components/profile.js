@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import {Button, Icon , Row} from 'react-materialize';
 import FormLogin from './formRegister';
 import LoginFacebook from  './loginFacebook'
-import './basic.css';
+
+
+
 
 
 class Profile extends React.Component
@@ -11,6 +13,7 @@ class Profile extends React.Component
   constructor(props)
   {
     super(props);
+
 	
 	this.getElement();
 
@@ -18,17 +21,27 @@ class Profile extends React.Component
   
   getElement()
   {
-	let $j = global.$;  
+	/*let $j = global.$;  
 	$j(global).ready(function(){
 	  $j('#magazine').turn({
 		width: 1300,
 		height: 840,
-		elevation: 50,
-		gradients: true,
-		autoCenter: false,
-		pages: 12,
+	    duration: 1000,
+		autoCenter: true,
+        
 	  });		
-	});
+	});*/
+	  
+  }
+  
+  
+    
+  
+  
+  getProfile() 
+  {
+	  
+	  
 	  
   }
   
@@ -36,16 +49,32 @@ class Profile extends React.Component
   render()
   {
     return (
-	<div id="content" >
-		<div id="magazine">
-			<div className="hard" id="capa" > </div>
-			<div><span className="text">Page 1</span></div>
-			<div><span className="text">Page 2</span></div>
-			<div><span className="text">Page 3</span></div>
-			<div><span className="text">Page 4</span></div>
-			<div><span className="text">Page 3</span></div>
-			<div className="hard"></div>
+	<div id ="content" >
+		<div id="magazine" className="sj-book">
+		   
+			<div className="hard" id="capa" > 
+			
+			</div>
+			
+			<div id="capa2">
+				<span className="own-size" >Page 1</span>
+			</div>
+			<div id="capa3">
+			    <span className="own-size">Page 2</span>
+			</div>
+			<div id="capa4">
+			    <span className="own-size">Page 3</span>
+			</div>
+			<div><div className="depth"></div></div>
+			<div className="hard fixed back-side"> 
+			     <div className="depth"></div> 
+			</div>
+			
+			
 		</div>
+		<div id="slider-bar" class="turnjs-slider">
+			<div id="slider"></div>
+	    </div>
 	</div>
    );
   }
