@@ -47,6 +47,7 @@ footer.page-footer {
 
 	 background-color: #FFF;
 }
- a{ 
-	  color: black !important;
+.fonav ul  li a {
+	
+	color : #000;
 }

@@ -50,31 +50,7 @@ class Profile extends React.Component
   {
     return (
 	<div id ="content" >
-		<div id="magazine" className="sj-book">
-		   
-			<div className="hard" id="capa" > 
-			
-			</div>
-			
-			<div id="capa2">
-				<span className="own-size" >Page 1</span>
-			</div>
-			<div id="capa3">
-			    <span className="own-size">Page 2</span>
-			</div>
-			<div id="capa4">
-			    <span className="own-size">Page 3</span>
-			</div>
-			<div><div className="depth"></div></div>
-			<div className="hard fixed back-side"> 
-			     <div className="depth"></div> 
-			</div>
-			
-			
-		</div>
-		<div id="slider-bar" class="turnjs-slider">
-			<div id="slider"></div>
-	    </div>
+		cascascascascs
 	</div>
    );
   }

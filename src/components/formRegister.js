@@ -8,6 +8,7 @@ class FormLogin extends React.Component
 {
    constructor(props)
    {
+	  console.log(props); 
      super(props);
 	 this.state = {
 		 email: "",

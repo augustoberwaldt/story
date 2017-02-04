@@ -7,10 +7,12 @@ import './App.css';
 
 const rootElement = global.document.getElementById('root');
 
+const yolo =  <h1>sdcasdc</h1>;
+
 ReactDOM.render(
   <Router history={browserHistory}>
    <Route path="/" component={Home} />
-   <Route path="test" component={Profile} />
+   <Route path="/login" component={Profile} />
  </Router>
   ,
  rootElement
