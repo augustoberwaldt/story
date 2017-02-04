@@ -1,24 +1,52 @@
-.App {
-  text-align: center;
+ 
+/* label color */
+.input-field label {
+ color: red;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+ color: red;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+ border-bottom: 1px solid red;
+ box-shadow: 0 1px 0 0 red;
+}
+/* valid color */
+.input-field input[type=text].valid {
+ border-bottom: 1px solid red;
+ box-shadow: 0 1px 0 0 red;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+ border-bottom: 1px solid red;
+ box-shadow: 0 1px 0 0 red;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+ color: red;
+}
+.col.s12 > .btn {
+   width: 100%;
+}
+.btfc {
+   width: 100%;
+}
+footer.page-footer {
+    padding-top: 20px;
+    background-color: #FFF;
+}
+.footer-copyright   nav {
+	 border: none;
+	 color : #000;
+	 background-color: #FFF;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
+.fonav{
+	box-shadow:none !important;
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+	 background-color: #FFF;
 }
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+ a{ 
+	  color: black !important;
 }

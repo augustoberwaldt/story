@@ -17,10 +17,10 @@ class LoginFacebook extends React.Component
     return (
       <FacebookLogin
         appId="1088597931155576"
-        autoLoad={true}
+        autoLoad={false}
         fields="name,email,picture"
         callback={this.responseFacebook}
-		cssClass="btn waves-effect waves-light blue"
+		cssClass="btn waves-effect waves-light blue btfc"
 		icon="fa-facebook"
 		textButton={I18n.lang.formLogin.signupFacebook}
       />

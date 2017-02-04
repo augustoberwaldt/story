@@ -64,54 +64,70 @@ class FormLogin extends React.Component
    {
     
     return (
-  	  <div className="col s6">
-		  <form className='form' onSubmit={this.handleSubmit}>
-		    <LoginFacebook/> 
-			  <div>
-				  <input 
-				   name="email"
-				   placeholder={I18n.lang.formLogin.email}
-				   value={this.state.email}
-				   onChange={this.handleChange}
-				   type="text"
-				  />
+	
+  	  <div className="col s12" >
+		  <form className="col s12" onSubmit={this.handleSubmit}>
+		        <div className="row">
+				   <div className="col s12">
+					<LoginFacebook/>
+				   </div>				  
+			    </div>
+			    <div className="row">
+			       <div className="col s12">
+					  <input 
+					   name="email"
+					   placeholder={I18n.lang.formLogin.email}
+					   value={this.state.email}
+					   onChange={this.handleChange}
+					   type="text"
+					  />
+					</div>
+			  	</div>
+				<div className="row">
+				   <div className="col s12">
+					  <input 
+					   name="name"
+					   placeholder={I18n.lang.formLogin.name}
+					   onChange={this.handleChange}
+					   value={this.state.name}					   
+					   type="text" 
+					  />
+				   </div>
 				</div>
-				<div>
-				  <input 
-				   name="name"
-				   placeholder={I18n.lang.formLogin.name}
-				   onChange={this.handleChange}
-				   value={this.state.name}					   
-				   type="text" 
-				  />
+				<div className="row">
+				   <div className="col s12">
+					  <input 
+					   name="user"  
+					   placeholder={I18n.lang.formLogin.user}
+					   value={this.state.user}					   
+					   onChange={this.handleChange}
+					   type="text" 
+					   />
+				   </div>
 				</div>
-				<div>
-				  <input 
-				   name="user"  
-				   placeholder={I18n.lang.formLogin.user}
-				   value={this.state.user}					   
-				   onChange={this.handleChange}
-				   type="text" 
-				   />
+				<div className="row">
+				   <div className="col s12">
+					  <input 
+					   name="password" 
+					   placeholder={I18n.lang.formLogin.password}
+					   value={this.state.password}
+					   onChange={this.handleChange}
+					   type="password" 
+					   />
+				   </div>
 				</div>
-				<div>
-				  <input 
-				   name="password" 
-				   placeholder={I18n.lang.formLogin.password}
-				   value={this.state.password}
-				   onChange={this.handleChange}
-				   type="password" 
-				   />
-				</div>
-				<div>
-				  <span>
+				<div className="row">
+				  <div  className="col s12" >
+				   
 					<Button  className='blue' waves='light' >
 						{I18n.lang.formLogin.signup} 
 					</Button>
-				  </span>
+				
+				 </div>
 			  </div>
 		  </form>
   		</div>
+		
  	  );
   }
 

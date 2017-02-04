@@ -1,10 +1,10 @@
 import LocalizedStrings from 'react-localization';
 
- const lang = new LocalizedStrings(
+ let lang = new LocalizedStrings(
     {
         en : {
-          index : {
-            
+          home : {
+             title : "What is your Story ?"
           },
           formLogin : {
             name : "Full name",
@@ -16,7 +16,8 @@ import LocalizedStrings from 'react-localization';
           }
         },
         pt : {
-          index : {
+          home : {
+			  title : "Qual é a sua história ?"
            
          },
          formLogin : {
@@ -27,10 +28,23 @@ import LocalizedStrings from 'react-localization';
            signup     : "Cadastre-se",
 		   signupFacebook :"      Entrar com o Facebook"
          }
-       }
+       },
+	   es : {
+		   home : {
+			    title : "What is your Story ?"
+		   },
+           formLogin : {
+             name : "Full name",
+             user : "User name",
+             password : "Password",
+             email : "Phone or email",
+             signup  : "sign in",
+			 signupFacebook :"Log in with Facebook"
+           }
+	   }
     });
 
-
+lang.setLanguage('en');
 export default {
     lang :  lang
 };
