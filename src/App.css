@@ -44,10 +44,12 @@ footer.page-footer {
 
 .fonav{
 	box-shadow:none !important;
-
-	 background-color: #FFF;
+	background-color: #FFF;
 }
 .fonav ul  li a {
 	
 	color : #000;
+}
+nav ul a:hover {
+    background-color:  #FFF;
 }

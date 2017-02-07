@@ -12,7 +12,7 @@ const yolo =  <h1>sdcasdc</h1>;
 ReactDOM.render(
   <Router history={browserHistory}>
    <Route path="/" component={Home} />
-   <Route path="/login" component={Profile} />
+   <Route path="/profile" component={Profile} />
  </Router>
   ,
  rootElement

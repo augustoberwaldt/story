@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, Link, browserHistory } from 'react-router'
 import {Button, Icon , Row} from 'react-materialize';
-import FormLogin from './formRegister';
+import FormRegister from './forms/formRegister';
+import FormLogin from './forms/formLogin';
 
 import './../App.css';
 import I18n from '../i18n';
@@ -12,7 +13,8 @@ class Home extends React.Component
   constructor(props)
   {
      super(props);
-	 this.ba =1;
+	 this.state = {showMe : true};
+
 	 this. geral = {
 	   backgroundColor: "#fff",
        border: "1px solid #e6e6e6",
@@ -41,8 +43,9 @@ class Home extends React.Component
 		 marginLeft: '10px',
 	 };
 	 this.termos = {
-		 
-		  textAlign:'center'
+		  lineHeight: '18px',
+		  textAlign:'center',
+		  margin: '10px 60px'
 		 
 	 };
 	 this.headertmp = {
@@ -53,23 +56,36 @@ class Home extends React.Component
 	 this.login = {
 		 color:'red !important'
 	 }
-	 this.recLogin ="Tem uma conta?  ";
+	
 	 
-    I18n.lang.setLanguage('en');
+    this.handleClick = this.handleClick.bind(this);
   }
 
   getYear() {
 	  
 	var date = new Date();
     var year = date.getFullYear();  
-	  
 	return year;
   }
-  getElementLogin() {
-	  alert(this.recLogin );
-	this.recLogin ="Não tem uma conta?  ";
+  handleClick() {
+	
+	 this.setState(prevState => ({
+      showMe: !prevState.showMe
+    }));
   }
-  
+  getTerms() {
+	
+     if (!this.state.showMe) {
+		 return;
+	 }
+     return <p style={this.termos}>
+				  Ao cadastrar-se, você concorda com nossos <Link style={{verticalAlign: 'baseline' 
+				  }} >Termos</Link> e <Link>Política de Privacidade.</Link>
+			  </p>;	 
+	  
+  }
+   
+ 
   render()
   {
     return (
@@ -82,9 +98,12 @@ class Home extends React.Component
 	   <div className="col s12"  style={this.geral}>
 	   <Row>
 		   <div className="col s4 offset-s7" style={this.headertmp}>
-			  <p> {this.recLogin}
-			  <a  href="javascript:;" onClick={this.getElementLogin}  style={this.login} > 
-			  Faça login </a> 
+			  <p> {
+				 (this.state.showMe ? "Tem uma conta? " : "Não tem uma conta?  ")
+			  }
+			  <a  href="javascript:;" onClick={this.handleClick}  style={this.login} > 
+				  {(this.state.showMe ? "Faça login " : "Cadastre-se ")}
+			  </a> 
 			  </p>
 		   </div>
 	   </Row>
@@ -93,36 +112,39 @@ class Home extends React.Component
 			  <img className="responsive-img"  style={this.logo} src="./../../pictures/livros-e-computador.jpg" />
 		   </div>
 		   <div className="col s4" style={this.frmreg}>
-			  <FormLogin banana={this.ba}></FormLogin>
-			  <p style={this.termos}>
-				  Ao cadastrar-se, você concorda com nossos Termos e Política de Privacidade.
-			  </p>
+		      {
+				  (this.state.showMe ? <FormRegister></FormRegister> : <FormLogin></FormLogin>)
+				  
+			  }
+			  
+			  {
+				  this.getTerms()
+			  } 
+			 
 		   </div> 
 	     </Row>
 	   </div>
 	   <footer className="page-footer">
-			   <div className="row">
-				
-                    <div className="col s10">
-					  <nav className="fonav">
-						  <ul>
-							<li><a href="#!">SOBRE NÓS</a></li>
-							<li><a href="#!">SUPORTE</a></li>
-							<li><a  href="#!">IMPRENSA</a></li>
-							<li><a  href="#!">API</a></li>
-							<li><a  href="#!">PRIVACIDADE</a></li>
-							<li><a href="#!">TERMOS</a></li>
-							<li><a  href="#!">IDIOMA</a></li>
-						  </ul>
-						  
-					  </nav>
-                     </div>
-					 <div style={ this.footer} className="col s2">
-					      <span> © {this.getYear()} Story </span>					  
-					 </div>
-			  
-			  </div>		 
-
+		   <div className="row">
+				<div className="col s10">
+				  <nav className="fonav">
+					  <ul>
+						<li><a href="#!">SOBRE NÓS</a></li>
+						<li><a href="#!">SUPORTE</a></li>
+						<li><a  href="#!">IMPRENSA</a></li>
+						<li><a  href="#!">API</a></li>
+						<li><a  href="#!">PRIVACIDADE</a></li>
+						<li><a href="#!">TERMOS</a></li>
+						<li><a  href="#!">IDIOMA</a></li>
+					  </ul>
+					  
+				  </nav>
+				 </div>
+				 <div style={this.footer} className="col s2">
+					  <span> © {this.getYear()} Story </span>					  
+				 </div>
+		  
+		  </div>		 
 	   </footer>
     </div>);
   }
