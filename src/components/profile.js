@@ -18,7 +18,36 @@ class Profile extends React.Component
 	this.getElement();
 	this.rootStyle = {
 		  topo : {
-			  
+			  search:{
+				  
+				  backgroundPosition: '-246px 205px',
+				  backgroundImage: 'url(/pictures/e05e5e.png)',
+                  backgroundSize: '352px 311px',
+				  zIndex: 4,
+				  left: '8px',
+                  position: 'absolute',
+                  top: '8px',
+				  height: '15px',
+                  width: '14px'
+				  
+			  },
+			  busca:{
+				  border: 'solid 1px #dbdbdb',
+				  borderRadius: '3px',
+				  background: '#FFF',
+				  height: '26px',
+				  fontSize: '14px',
+                  outline: 'none',
+                  padding: '3px 10px 0px 26px',
+			  },
+			    busca2:{
+				
+				  borderRadius: '3px',
+				  marginTop: '4px',
+				
+				  position: 'relative',
+				  height: '30px'
+			  },
 			  logo :  {
 				  paddingTop: '42px'
 				  
@@ -91,7 +120,10 @@ class Profile extends React.Component
 						
 				</div>
 				<div className="col s2"> 
-						 <input type="text" />
+					<div    style={this.rootStyle.topo.busca2}>
+						<span style={this.rootStyle.topo.search}> 	 </span>
+						<input  style={this.rootStyle.topo.busca}  type="text" />
+					</div>
 				</div>
 				
 		    </div>
