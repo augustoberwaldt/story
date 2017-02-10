@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Button, Icon , Row} from 'react-materialize';
 import FormLogin from './forms/formRegister';
-
+import Topo from './topo';
+import Rodape from './rodape';
+import {Router, Route, Link, browserHistory } from 'react-router'
 import Dropzone from 'react-dropzone';
 
 
@@ -60,7 +62,8 @@ class Profile extends React.Component
 				   marginTop: '340px',
 			  },
 			  inputitle: {
-				  fontSize: '40px'				   
+				  fontSize: '40px'	,
+                  textAlign:'center'				  
 			  },
 			  borda: {
 				   height: '1200px',
@@ -70,15 +73,20 @@ class Profile extends React.Component
 				 marginTop: '40px'   
 			  },
 			  foto2: {
-				  width: '200px',
-                  height: '200px',
+				  width: '245px',
+                  height: '230px',
                   borderWidth: '2px',
                   borderColor: '#039be5',
                   borderStyle: 'dashed',
                   borderRadius: '5px',
 				  
-			  }
-			  
+			  },
+			  proximo: {
+				 marginTop: '180px'   
+			  },
+			  proximobutton: {
+				 width: '240px'
+			  },
 			  
 		  }
 		
@@ -112,27 +120,11 @@ class Profile extends React.Component
   {
     return (
 	<section> 
-		    <Row>  
-			      
-			<div style={this.rootStyle.topo.header}  className="col s12"> 
-			
-				<div style={this.rootStyle.topo.logo}  className="col s2 offset-s3"> 
-						
-				</div>
-				<div className="col s2"> 
-					<div    style={this.rootStyle.topo.busca2}>
-						<span style={this.rootStyle.topo.search}> 	 </span>
-						<input  style={this.rootStyle.topo.busca}  type="text" />
-					</div>
-				</div>
-				
-		    </div>
-			</Row> 
+		   <Topo> </Topo>
 			<div className="container" >
 			   <Row>
 				  <div className="col s12">
 					 <div style={this.rootStyle.body.borda} className="col s10 offset-s1" >
-						<form>
 						   <div  style={this.rootStyle.body.foto}  className="col s6 offset-s4">
 							  <Dropzone style={this.rootStyle.body.foto2}  onDrop={this.onDrop}>
 								 <div  className="col s12">
@@ -143,17 +135,13 @@ class Profile extends React.Component
 						   <div style={this.rootStyle.body.title}  className="col s10 offset-s1"> 
 							  <input  style={this.rootStyle.body.inputitle} placeholder="Informe o titulo de sua Historia" type="text" />
 						   </div>
-						</form>
+						   <div style={this.rootStyle.body.proximo}  className="col s3 offset-s4"> 
+							  <Link className="waves-effect waves-light btn-large" style={this.rootStyle.body.proximobutton}  waves='light' > Proximo</Link>
+						   </div>
 					 </div>
 				  </div>
 			   </Row>
-			   <footer className="page-footer">
-				  <div className="row">
-					 <div  className="col s2 offset-s9">
-						<span> © 2017 Story </span>					  
-					 </div>
-				  </div>
-			   </footer>
+			   <Rodape/>
 			</div>
 		</section>
 		
