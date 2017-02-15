@@ -32,9 +32,7 @@ class Home extends React.Component
 	   height: '100%',
      };
 	 this.footer = {
-		 
 		 marginTop:"18px"
-		 
 	 }
 	 
 	 this.logo = {
@@ -50,13 +48,12 @@ class Home extends React.Component
 	 };
 	 this.headertmp = {
 		  border: "1px solid #e6e6e6",
-		  textAlign:'center'
-		  
+		  textAlign:'center',
+		  marginTop: "40px"
 	 };
-	 this.login = {
-		 color:'red !important'
-	 }
-	
+	 
+
+ 
 	 
     this.handleClick = this.handleClick.bind(this);
   }
@@ -79,11 +76,13 @@ class Home extends React.Component
 		 return;
 	 }
      return <p style={this.termos}>
-				  Ao cadastrar-se, você concorda com nossos <Link style={{verticalAlign: 'baseline' 
-				  }} >Termos</Link> e <Link>Política de Privacidade.</Link>
-			  </p>;	 
-	  
-  }
+			 {I18n.lang.terms.description} 
+			 <Link style={{verticalAlign: 'baseline' }}> {I18n.lang.terms.descriptionlinkTerm} </Link> 
+			{I18n.lang.terms.conj} <Link>{I18n.lang.privacy.description}.</Link>
+			</p>;	 
+	 
+  }  
+  
    
  
   render()
@@ -101,7 +100,7 @@ class Home extends React.Component
 			  <p> {
 				 (this.state.showMe ? "Tem uma conta? " : "Não tem uma conta?  ")
 			  }
-			  <a  href="javascript:;" onClick={this.handleClick}  style={this.login} > 
+			  <a  href="javascript:;" onClick={this.handleClick}  > 
 				  {(this.state.showMe ? "Faça login " : "Cadastre-se ")}
 			  </a> 
 			  </p>

@@ -5,11 +5,12 @@ import Home from './components/home';
 import Profile from './components/profile';
 import ListProfile from './components/listProfile';
 import ReadBook from './components/readbook';
+import ProfileWrite from './components/profileWrite';
 import './App.css';
 
 const rootElement = global.document.getElementById('root');
 
-const yolo =  <h1>sdcasdc</h1>;
+
 
 ReactDOM.render(
   <Router history={browserHistory}>
@@ -17,6 +18,7 @@ ReactDOM.render(
    <Route path="/profile" component={Profile} />
    <Route path="/search" component={ListProfile} />
    <Route path="/book" component={ReadBook} />
+   <Route path="/profileWrite" component={ProfileWrite} />
  </Router>
   ,
  rootElement
