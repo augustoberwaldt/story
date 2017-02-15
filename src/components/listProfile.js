@@ -9,52 +9,36 @@ import ElementListProfile from './elementListProfile';
 
 class ListProfile extends React.Component
 {
-  constructor(props)
-  {
-    super(props);
-
-	
-
-	this.rootStyle = {
-		
-		  body : {
-			 
-			  borda: {
-				   height: '300px',
-				   border: "1px solid #e6e6e6",
-				
-			  }, 
-		  }
-		
-		
-	};
-
+  constructor(props) {
+    super(props);	
   }
   
- 
-
+  getProfiles() {
+	var rows = [],
+	i = 0,
+	len = 10;
+    while (++i <= len) {
+		rows.push(<ElementListProfile key={i} />);
+	}		
+   
+	return rows;
+  }
   
-  render()
-  {
-	var rows = [], i = 0, len = 10;
-    while (++i <= len) rows.push(i);
-
+  render() {
     return (
-	<section> 
+	    <section> 
 		   <Topo> </Topo>
 			<div className="container" >
 			   <Row>
 				  <div className="col s12">
-				  {rows.map(function (i) {
-					 return  <ElementListProfile/>
-				   })}
+				  {this.getProfiles()}
 				  </div>
 			   </Row>
-			   <Rodape/>
 			</div>
+		    <Rodape/>	
 		</section>
 		
-   );
+    );
   }
 
 }
