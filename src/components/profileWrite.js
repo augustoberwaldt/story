@@ -49,6 +49,10 @@ class ProfileWrite extends React.Component
 								  onChange={this.handleChange}
 								/>
 							</div>
+							<div>
+							
+							 <Button> Proximo </Button> 
+							</div>
 					 </div>
 				  </div>
 			   </Row>
