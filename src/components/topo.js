@@ -63,21 +63,21 @@ class Topo extends React.Component
   render()
   {
     return (
-		    <Row>        
-				<div style={this.rootStyle.topo.header}  className="col s12"> 
-				
-					<div style={this.rootStyle.topo.logo}  className="col s2 offset-s3"> 
-							
-					</div>
-					<div className="col s2"> 
-						<div    style={this.rootStyle.topo.busca2}>
-							<span style={this.rootStyle.topo.search}> 	 </span>
-							<input  style={this.rootStyle.topo.busca}  type="text" />
-						</div>
-					</div>
+		        
+		<div style={this.rootStyle.topo.header}  className="col s12 m12 l12"> 
+		
+			<div style={this.rootStyle.topo.logo}  className="col s2 offset-s3"> 
 					
+			</div>
+			<div className="col s2"> 
+				<div    style={this.rootStyle.topo.busca2}>
+					<span style={this.rootStyle.topo.search}> 	 </span>
+					<input  style={this.rootStyle.topo.busca}  type="text" />
 				</div>
-			</Row> 
+			</div>
+			
+		</div>
+	
 		
 		
    );

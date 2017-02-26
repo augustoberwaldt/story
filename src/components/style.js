@@ -49,7 +49,7 @@ export default {
                   textAlign:'center'				  
 			  },
 			  borda: {
-				   height: '1200px',
+				   height: '1100px',
 				   border: "1px solid #e6e6e6"
 			  },
 			  foto: {

@@ -12,6 +12,7 @@ import LocalizedStrings from 'react-localization';
 				password : "Password",
 				email : "Phone or email",
 				signup  : "sign in",
+				login     : "Entrar",
 				signupFacebook :"Log in with Facebook"
 			  },
 			  terms : {
@@ -34,7 +35,12 @@ import LocalizedStrings from 'react-localization';
 			   password : "Senha",
 			   email    : "Número do celular ou email",
 			   signup     : "Cadastre-se",
-			   signupFacebook :"      Entrar com o Facebook"
+			   login     : "Entrar",
+			   signupFacebook :"      Entrar com o Facebook",
+			   account : "Tem uma conta ? ",
+			   notaccount : "Não tem uma conta ? ",
+			   goLogin : "Faça login",
+			   goAccount : "Cadastre-se"
 			 },
 			 terms : {
 				  description : "Ao cadastrar-se, você concorda com nossos",
@@ -46,32 +52,36 @@ import LocalizedStrings from 'react-localization';
 			 }
        },
 	   es : {
-		   home : {
-			    title : "What is your Story ?"
-		   },
-           formLogin : {
-             name : "Full name",
-             user : "User name",
-             password : "Password",
-             email : "Phone or email",
-             signup  : "sign in",
-			 signupFacebook :"Log in with Facebook"
-           }
+		    home : {
+				 title : "What is your Story ?"
+			  },
+			  formLogin : {
+				name : "Full name",
+				user : "User name",
+				password : "Password",
+				email : "Phone or email",
+				signup  : "sign in",
+				login     : "Entrar",
+				signupFacebook :"  Log in with Facebook",
+				account : "Do you have an account ? ",
+				notaccount : "Do not have an account ? ",
+				goLogin : "Sign in",
+		        goAccount : "Sign up"
+			  },
+			  terms : {
+				  description : "By signing up, you agree to our",
+				  descriptionlinkTerm : "Terms ",
+				  conj: "&"
+			  },
+			  privacy : {
+				   description : "Privacy Policy"
+			  }
 	   }
     });
 	
-	 var lang2 = new LocalizedStrings({
-		  en: {
-			  test: 'welcome'
-		  },
-		  pt : {
-			  test: 'ola'
-		  }
-		 
-	 });
-    lang2.setLanguage('en');
+    
+  lang.setLanguage('es');
 
 export default {
     lang :  lang,
-    lang2 :  lang2
 };

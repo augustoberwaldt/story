@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import {Button, Icon} from 'react-materialize';
 import I18n from '../../i18n';
 import LoginFacebook from  './../loginFacebook'
-
+import { Router } from 'react-router';
+import  './../../css/formLogin.css';
 class FormLogin extends React.Component
 {
    constructor(props)
@@ -12,22 +13,25 @@ class FormLogin extends React.Component
      super(props);
 	 this.state = {
 		 user: "",
-		 password: "",  
+		 password: "",
+		 requestMsg: ""  
 	 };
 	 this.handleChange = this.handleChange.bind(this);
-     this.handleSubmit = this.handleSubmit.bind(this);  
+     this.handleSubmit = this.handleSubmit.bind(this); 
+     this.result       = this.result.bind(this);  
    }
   
    
    handleChange(event) 
    {
 	 const target = event.target;
-     const value = target.type === 'checkbox' ? target.checked : target.value;
-     const name = target.name;
+     const value  = target.type === 'checkbox' ? target.checked : target.value;
+     const name   = target.name;
 
      this.setState({
        [name]: value
      });
+
    }
    
    handleSubmit(event)
@@ -35,28 +39,36 @@ class FormLogin extends React.Component
 	   
 	   var request = require('request-promise');
 	   var options = {
+	   	   
 			method: 'POST',
-			uri: 'https://github.com/augustoberwaldt/story-server',
-			qs: {
-				access_token: 'xxxxx xxxxx' 
-			},
+			   resolveWithFullResponse: true ,
+			uri: 'http://localhost/story-server/public/user/login',
 			headers: {
+				"Content-Type": "application/json",
 				'User-Agent': 'Request-Promise'
 			},
-			body: {
-			  some: 'payload'
-			}
-		
+			form:this.state,
+			json: true
 	   };
    
 	
-	   request(options).then(function (repos) {
-			console.log('User has %d repos', repos.length);
-	   }).catch(function (err) {
-			
+	   request(options)
+	   .then(this.result)
+	   .catch(function (err) {
+          console.log(err); 			
 	   });
 		
-		event.preventDefault();
+	   event.preventDefault();
+   }
+   
+   result(repos) 
+   {
+
+       this.setState ({
+            requestMsg : repos.body.msg 
+       });
+  
+
    }
 
   render()
@@ -70,7 +82,7 @@ class FormLogin extends React.Component
 			    <div className="row">
 			       <div className="col s12">
 					  <input 
-					   name="email"
+					   name="user"
 					   placeholder={I18n.lang.formLogin.user}
 					   value={this.state.user}
 					   onChange={this.handleChange}
@@ -91,11 +103,15 @@ class FormLogin extends React.Component
 				</div>
 				<div className="row">
 				  <div  className="col s12" >
-				   
-					<Button  className='blue' waves='light' >
-						{I18n.lang.formLogin.signup} 
-					</Button>
+					  <p className="respmsg" >{this.state.requestMsg}</p>
 				
+				 </div>
+			  </div>
+			  <div className="row">
+				  <div  className="col s12" >
+					<Button  className='blue' waves='light' >
+						{I18n.lang.formLogin.login} 
+					</Button>
 				 </div>
 			  </div>
 		  </form>

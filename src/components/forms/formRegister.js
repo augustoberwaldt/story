@@ -38,20 +38,14 @@ class FormRegister extends React.Component
 	   var request = require('request-promise');
 	   var options = {
 			method: 'POST',
-			uri: 'https://github.com/augustoberwaldt/story-server',
-			qs: {
-				access_token: 'xxxxx xxxxx' 
-			},
+			uri: 'http://localhost/story-server/public/user/create',
 			headers: {
 				'User-Agent': 'Request-Promise'
 			},
-			body: {
-			  some: 'payload'
-			}
-		
+			form:this.state,
 	   };
    
-	
+
 	   request(options).then(function (repos) {
 			console.log('User has %d repos', repos.length);
 	   }).catch(function (err) {

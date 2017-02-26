@@ -39,6 +39,7 @@ class Home extends React.Component
 		 height: '590px',
 		 width : '400px',
 		 marginLeft: '10px',
+		 marginTop : '-80px'
 	 };
 	 this.termos = {
 		  lineHeight: '18px',
@@ -98,10 +99,10 @@ class Home extends React.Component
 	   <Row>
 		   <div className="col s4 offset-s7" style={this.headertmp}>
 			  <p> {
-				 (this.state.showMe ? "Tem uma conta? " : "Não tem uma conta?  ")
+				 (this.state.showMe ? I18n.lang.formLogin.account : I18n.lang.formLogin.notaccount )
 			  }
 			  <a  href="javascript:;" onClick={this.handleClick}  > 
-				  {(this.state.showMe ? "Faça login " : "Cadastre-se ")}
+				  {(this.state.showMe ? I18n.lang.formLogin.goLogin: I18n.lang.formLogin.goAccount)}
 			  </a> 
 			  </p>
 		   </div>
@@ -115,7 +116,6 @@ class Home extends React.Component
 				  (this.state.showMe ? <FormRegister></FormRegister> : <FormLogin></FormLogin>)
 				  
 			  }
-			  
 			  {
 				  this.getTerms()
 			  } 

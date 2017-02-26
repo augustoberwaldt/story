@@ -10,6 +10,7 @@
      src="https://code.jquery.com/jquery-3.1.1.min.js"
      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
      crossorigin="anonymous"></script>
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
      <!-- Compiled and minified JavaScript -->
@@ -18,8 +19,69 @@
 
 
   </head>
-  <body >
-    <div id="root"></div>
+  <body style="
+    width: 100% !important;
+   ">
+    <div id="root"  class="col s12"></div>
 	
   </body>
+   <script type="text/javascript">
+     $( document ).ready(function() {
+    var hiddenDiv = $('.hiddendiv').first();
+    if (!hiddenDiv.length) {
+      hiddenDiv = $('<div class="hiddendiv common"></div>');
+      $('body').append(hiddenDiv);
+    } 
+    var text_area_selector = '.medium-editor-element';
+
+    function textareaAutoResize($textarea) {
+      // Set font properties of hiddenDiv
+      
+      var fontFamily = $textarea.css('font-family');
+      var fontSize = $textarea.css('font-size');
+      var lineHeight = $textarea.css('line-height');
+
+      if (fontSize) { hiddenDiv.css('font-size', fontSize); }
+      if (fontFamily) { hiddenDiv.css('font-family', fontFamily); }
+      if (lineHeight) { hiddenDiv.css('line-height', lineHeight); }
+
+      if ($textarea.attr('wrap') === "off") {
+        hiddenDiv.css('overflow-wrap', "normal")
+                 .css('white-space', "pre");
+      }
+
+      hiddenDiv.text($textarea.text() + '\n');
+      var content = hiddenDiv.html().replace(/\n/g, '<br>');
+  
+      hiddenDiv.html(content);
+
+
+      // When textarea is hidden, width goes crazy.
+      // Approximate with half of window size
+
+      if ($textarea.is(':visible')) {
+        hiddenDiv.css('width', $textarea.width());
+      }
+      else {
+        hiddenDiv.css('width', $(window).width()/2);
+      }
+       console.log(hiddenDiv.height()); 
+      $textarea.css('height', hiddenDiv.height());
+    }
+
+    $(text_area_selector).each(function () {
+
+      var $textarea = $(this);
+
+      if ($textarea.text().length) {
+        textareaAutoResize($textarea);
+      }
+    });
+
+    $('body').on('keyup keydown autoresize', text_area_selector, function () {
+      textareaAutoResize($(this));
+    });
+});
+
+   </script>>
 </html>
