@@ -61,7 +61,14 @@ class ProfileWrite extends React.Component
   ////<Button> Proximo </Button> --> 
 handleBlur () {
  let element  = document.getElementById('icon_prefix2');
-  
+  console.log("texto",element.innerHTML.length);
+ console.log("--",element.scrollHeight);
+ let  dif =  element.scrollHeight - element.innerHTML.length;
+console.log("dif",dif);
+  if (dif > 90) {
+    element.style.height = (element.innerHTML.length)+"px";
+
+  }
 }
 
   render()
