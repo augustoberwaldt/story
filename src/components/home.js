@@ -176,7 +176,8 @@ class Home extends React.Component
 						<li>
 						    <Row className="selectId">
 							  <Input s={12}  onChange={this.handleOnchange} type="select"  defaultValue={this.state.language} >
-							    {this.getLangs()}
+							    <option value="" > IDIOMA   </option> 
+							     {this.getLangs()}
 							  </Input>
 							</Row>
 						</li>
