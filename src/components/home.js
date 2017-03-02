@@ -17,8 +17,8 @@ class Home extends React.Component
    super(props);
 
 
-   cookie.load("lang")
-   I18n.lang.setLanguage(cookie.load("lang"));
+   if (cookie.load("lang") !== undefined)
+      I18n.lang.setLanguage(cookie.load("lang"));
 
    this.state = {
      showMe : true,
