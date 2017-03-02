@@ -175,7 +175,7 @@ class Home extends React.Component
 						<li><a href="#!">TERMOS</a></li>
 						<li>
 						    <Row className="selectId">
-							  <Input s={12}  onChange={this.handleOnchange} type="select" label="Materialize Select" defaultValue={this.state.language} >
+							  <Input s={12}  onChange={this.handleOnchange} type="select"  defaultValue={this.state.language} >
 							    {this.getLangs()}
 							  </Input>
 							</Row>
