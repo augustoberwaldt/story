@@ -40,7 +40,11 @@ import LocalizedStrings from 'react-localization';
        email : "Phone or email",
        signup  : "sign in",
        login     : "Entrar",
-       signupFacebook :"Log in with Facebook"
+       signupFacebook :"Log in with Facebook",
+       account : "Tem uma conta ? ",
+       notaccount : "Não tem uma conta ? ",
+       goLogin : "Faça login",
+       goAccount : "Cadastre-se"
        },
        terms : {
          description : "By signing up, you agree to our",
@@ -66,7 +70,7 @@ import LocalizedStrings from 'react-localization';
   				account : "Do you have an account ? ",
   				notaccount : "Do not have an account ? ",
   				goLogin : "Sign in",
-  		        goAccount : "Sign up"
+  		                goAccount : "Sign up"
   			  },
   			  terms : {
   				  description : "By signing up, you agree to our",
