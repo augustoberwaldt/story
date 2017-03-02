@@ -22,7 +22,7 @@ class Home extends React.Component
 
    this.state = {
      showMe : true,
-     language: I18n.lang.getLanguage()
+     language: ""
    };
 
 	 this. geral = {
