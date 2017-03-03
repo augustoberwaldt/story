@@ -17,8 +17,7 @@ class Home extends React.Component
    super(props);
 
 
-   if (cookie.load("lang") !== undefined)
-      I18n.lang.setLanguage(cookie.load("lang"));
+  
 
    this.state = {
      showMe : true,
@@ -101,12 +100,13 @@ class Home extends React.Component
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
   
+    
     this.setState({
       [name]: value
     });
 
-    cookie.save('lang', event.target.value);
-    global.location.reload();
+     I18n.lang.setLanguage(event.target.value);
+    
 
   }
   getLangs () {
