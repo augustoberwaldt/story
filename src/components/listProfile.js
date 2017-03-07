@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import {Button, Icon , Row} from 'react-materialize';
 import FormLogin from './forms/formRegister';
 import {Router, Route, Link, browserHistory } from 'react-router'
-import Topo from './topo';
-import Rodape from './rodape';
+import Topo from './fragments/header';
+import Rodape from './fragments/footer';
 import ElementListProfile from './elementListProfile';
 
 class ListProfile extends React.Component
@@ -20,7 +20,6 @@ class ListProfile extends React.Component
     while (++i <= len) {
 		rows.push(<ElementListProfile key={i} />);
 	}		
-   
 	return rows;
   }
   
@@ -31,16 +30,14 @@ class ListProfile extends React.Component
 			<div className="container" >
 			   <Row>
 				  <div className="col s12">
-				  {this.getProfiles()}
+					{this.getProfiles()}
 				  </div>
 			   </Row>
 			</div>
 		    <Rodape/>	
 		</section>
-		
     );
   }
-
 }
 
 export default ListProfile;

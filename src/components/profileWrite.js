@@ -2,11 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Button, Icon , Row} from 'react-materialize';
 import FormLogin from './forms/formRegister';
-import Topo from './topo';
-import Rodape from './rodape';
+import Topo from './fragments/header';
+import Rodape from './fragments/footer';
 import {Router, Route, Link, browserHistory } from 'react-router'
 import Dropzone from 'react-dropzone';
-
 import Editor from 'react-medium-editor';
 import 'medium-editor/dist/css/medium-editor.css';
 import 'medium-editor/dist/css/themes/default.css';
@@ -48,7 +47,7 @@ class ProfileWrite extends React.Component
                minHeight: '3rem',
                width: 'calc(100% - 3rem)',
                marginLeft: '3rem',
-                 outline: 'none',
+               outline: 'none',
                overflow: 'hidden',
                textAlign:'start',
                textIndent:'0px',
@@ -58,51 +57,45 @@ class ProfileWrite extends React.Component
 		  }
 	};
   }
-  ////<Button> Proximo </Button> --> 
-handleBlur () {
- let element  = document.getElementById('icon_prefix2');
-  console.log("texto",element.innerHTML.length);
- console.log("--",element.scrollHeight);
- let  dif =  element.scrollHeight - element.innerHTML.length;
-console.log("dif",dif);
-  if (dif > 90) {
-    element.style.height = (element.innerHTML.length)+"px";
 
+  handleBlur () {
+	 let element  = document.getElementById('icon_prefix2');
+	 let  dif =  element.scrollHeight - element.innerHTML.length;
+	 
+	 if (dif > 90) {
+		element.style.height = (element.innerHTML.length)+"px";
+	 }
   }
-}
 
   render()
   {
     return (
-	<section> 
-	        <Row> 
-			   <Topo> </Topo>
-			</Row>
-			<div className="container" >
-			   <Row>
-				  <div className="col s12">
-					 <div style={this.rootStyle.body.borda} className="col s10 offset-s1" >
-						   <div style={this.rootStyle.body.borda2} className="app">
-								<i className="material-icons prefix">mode_edit</i>
-								<Editor
-								  onKeyUp={this.handleBlur}
-								  id="icon_prefix2"
-								  style={this.rootStyle.body.test}
-								  text={this.state.text}
-								  onChange={this.handleChange}
-								/>
-								
-							</div>
-							<div>
-							
-							 
-							</div>
-					 </div>
-				  </div>
-			   </Row>
-			   <Rodape/>
-			</div>
-		</section>
+	<section>
+	   <Row>
+		  <Topo> </Topo>
+	   </Row>
+	   <div className="container" >
+		  <Row>
+			 <div className="col s12">
+				<div style={this.rootStyle.body.borda} className="col s10 offset-s1" >
+				   <div style={this.rootStyle.body.borda2} className="app">
+					  <i className="material-icons prefix">mode_edit</i>
+					  <Editor
+						 onKeyUp={this.handleBlur}
+						 id="icon_prefix2"
+						 style={this.rootStyle.body.test}
+						 text={this.state.text}
+						 onChange={this.handleChange}
+						 />
+				   </div>
+				   <div>
+				   </div>
+				</div>
+			 </div>
+		  </Row>
+		  <Rodape/>
+	   </div>
+	</section>
 		
    );
   }
