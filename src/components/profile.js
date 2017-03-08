@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Button, Icon , Row} from 'react-materialize';
 import FormLogin from './forms/formRegister';
-import Topo from './fragments/topo';
-import Rodape from './fragments/rodape';
+import Header from './fragments/header';
+import Footer from './fragments/footer';
 import {Router, Route, Link, browserHistory } from 'react-router'
 import Dropzone from 'react-dropzone';
 import Style from './style';
@@ -26,7 +26,7 @@ class Profile extends React.Component
     return (
 		   <div>
 			   <Row>
-				  <Topo> </Topo>
+				  <Header> </Header>
 			   </Row>
 			   <div className="container" >
 				  <Row>
@@ -53,7 +53,7 @@ class Profile extends React.Component
 						</div>
 					 </div>
 				  </Row>
-				  <Rodape/>
+				  <Footer/>
 			   </div>
 		</div>  	  
     );
