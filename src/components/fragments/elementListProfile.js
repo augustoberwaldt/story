@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {Button, Icon , Row} from 'react-materialize';
 import FormLogin from './forms/formRegister';
 import {Router, Route, Link, browserHistory } from 'react-router'
-
+import Style from './../style';
 
 class ElementListProfile extends React.Component
 {
