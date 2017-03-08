@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import {Button, Icon , Row} from 'react-materialize';
 import FormLogin from './forms/formRegister';
 import {Router, Route, Link, browserHistory } from 'react-router'
-import Topo from './fragments/header';
-import Rodape from './fragments/footer';
+import Header from './fragments/header';
+import Footer from './fragments/footer';
 import ElementListProfile from './elementListProfile';
 
 class ListProfile extends React.Component
@@ -26,7 +26,7 @@ class ListProfile extends React.Component
   render() {
     return (
 	    <section> 
-		   <Topo> </Topo>
+		   <Header> </Header>
 			<div className="container" >
 			   <Row>
 				  <div className="col s12">
@@ -34,7 +34,7 @@ class ListProfile extends React.Component
 				  </div>
 			   </Row>
 			</div>
-		    <Rodape/>	
+		    <Footer/>	
 		</section>
     );
   }
