@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Button, Icon , Row} from 'react-materialize';
 import FormLogin from './forms/formRegister';
-import Topo from './fragments/header';
-import Rodape from './fragments/footer';
+import Header from './fragments/header';
+import Footer from './fragments/footer';
 import {Router, Route, Link, browserHistory } from 'react-router'
 import Dropzone from 'react-dropzone';
 import Editor from 'react-medium-editor';
@@ -72,7 +72,7 @@ class ProfileWrite extends React.Component
     return (
 	<section>
 	   <Row>
-		  <Topo> </Topo>
+		  <Header> </Header>
 	   </Row>
 	   <div className="container" >
 		  <Row>
@@ -93,7 +93,7 @@ class ProfileWrite extends React.Component
 				</div>
 			 </div>
 		  </Row>
-		  <Rodape/>
+		  <Footer/>
 	   </div>
 	</section>
 		
