@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Button, Icon , Row} from 'react-materialize';
-import FormLogin from './forms/formRegister';
+import FormLogin from './forms/../formRegister';
 import {Router, Route, Link, browserHistory } from 'react-router'
 import Dropzone from 'react-dropzone';
 
