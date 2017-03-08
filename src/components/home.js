@@ -6,7 +6,7 @@ import FormRegister from './forms/formRegister';
 import FormLogin from './forms/formLogin';
 import cookie from 'react-cookie';
 
-import './../App.css';
+import './../css/App.css';
 import I18n from '../i18n';
 
 class Home extends React.Component
