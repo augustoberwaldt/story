@@ -5,7 +5,7 @@ import FormLogin from './forms/formRegister';
 import {Router, Route, Link, browserHistory } from 'react-router'
 import Header from './fragments/header';
 import Footer from './fragments/footer';
-import ElementListProfile from './elementListProfile';
+import ElementListProfile from './fragments/elementListProfile';
 
 class ListProfile extends React.Component
 {
