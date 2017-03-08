@@ -4,8 +4,8 @@ import {Button, Icon , Row} from 'react-materialize';
 import FormLogin from './forms/formRegister';
 import {Router, Route, Link, browserHistory } from 'react-router'
 import Dropzone from 'react-dropzone';
-import Topo from './topo';
-import Rodape from './rodape';
+import Header from './fragments/header';
+import Footer from './fragments/footer';
 
 import './../book.css';
 
@@ -81,7 +81,7 @@ class ReadBook extends React.Component
   {	
     return (
 	<section>
-   <Topo/>
+   <Header/>
  
       <Row>
 	    <div className="col s10 offset-s2">
