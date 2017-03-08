@@ -7,7 +7,7 @@ import Dropzone from 'react-dropzone';
 import Header from './fragments/header';
 import Footer from './fragments/footer';
 
-import './../book.css';
+import './../css/book.css';
 
 class ReadBook extends React.Component
 {
