@@ -6,7 +6,7 @@ import Profile from './components/profile';
 import ListProfile from './components/listProfile';
 import ReadBook from './components/readbook';
 import ProfileWrite from './components/profileWrite';
-import './App.css';
+import './css/App.css';
 
 const rootElement = global.document.getElementById('root');
 
